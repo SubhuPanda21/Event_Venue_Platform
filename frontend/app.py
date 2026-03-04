@@ -22,7 +22,7 @@ st.set_page_config(
 )
 
 # ==================== API CONFIG ====================
-API_BASE_URL = "http://localhost:5000/api"
+API_BASE_URL = "https://event-venue-platform.onrender.com"
 
 # ==================== CUSTOM CSS ====================
 st.markdown("""
