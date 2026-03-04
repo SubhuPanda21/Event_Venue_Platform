@@ -44,7 +44,7 @@ app.use(compression());
 app.use(morgan('combined', { stream: { write: message => logger.info(message.trim()) } }));
 
 // Database connection with connection pooling for scalability
-mongoose.connect(process.env.MONGO_URI ||  {
+mongoose.connect(process.env.MONGO_URI, {
   maxPoolSize: 10,
   minPoolSize: 5,
   serverSelectionTimeoutMS: 5000,
