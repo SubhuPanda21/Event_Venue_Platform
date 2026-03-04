@@ -8,7 +8,7 @@ const Booking = require('../models/Booking');
 const seedData = async () => {
   try {
     // Connect to database
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/event-platform');
+    await mongoose.connect(process.env.MONGO_URI);
     console.log('✓ Connected to MongoDB');
 
     // Clear existing data
