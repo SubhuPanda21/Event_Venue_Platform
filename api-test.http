@@ -1,0 +1,136 @@
+### 1. Health Check
+GET http://localhost:5000/health
+
+###
+
+### 2. API Information
+GET http://localhost:5000/
+
+###
+
+### 3. Get All Venues
+GET http://localhost:5000/api/venues
+
+###
+
+### 4. Get Venues in New York
+GET http://localhost:5000/api/venues?city=New York
+
+###
+
+### 5. Get All Events
+GET http://localhost:5000/api/events
+
+###
+
+### 6. Register a New User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "myemail@example.com",
+  "password": "mypassword123",
+  "name": "My Name",
+  "role": "user",
+  "phone": "+1-555-8888"
+}
+
+###
+
+### Login as Admin
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@eventplatform.com",
+  "password": "admin123"
+}
+
+###
+
+### 8. Login as Venue Owner
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@venues.com",
+  "password": "password123"
+}
+
+###
+
+### 9. Login as Customer
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "mike@customer.com",
+  "password": "password123"
+}
+
+###
+
+### 10. Get Specific Venue (replace ID with real venue ID from step 3)
+GET http://localhost:5000/api/venues/PASTE_VENUE_ID_HERE
+
+###
+
+### 11. Create New Venue (Requires Token - Login first as venue owner)
+POST http://localhost:5000/api/venues
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OThlYzFiMzdhYzM3MTEyNTlmMmU1NGYiLCJpYXQiOjE3NzA5Njc1MDcsImV4cCI6MTc3MTU3MjMwN30.LjWzq9Tmf-ifqV3kMOjGubvQOxQysfdCWPz4ElZYg3c
+
+{
+  "name": "My Amazing Venue",
+  "description": "A beautiful space for events and gatherings",
+  "location": {
+    "address": "789 Event Street",
+    "city": "Chicago",
+    "state": "IL",
+    "zipCode": "60601"
+  },
+  "capacity": 150,
+  "pricePerHour": 300,
+  "amenities": ["WiFi", "Parking", "Catering", "AV Equipment"],
+  "venueType": "party"
+}
+
+###
+
+### 12. Create Event (Requires Token and Venue ID)
+POST http://localhost:5000/api/events
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OThlYzFiMzdhYzM3MTEyNTlmMmU1NGYiLCJpYXQiOjE3NzA5NjQyODUsImV4cCI6MTc3MTU2OTA4NX0.7BxHj-8B0c7vBI42t0Svz7Ev-XrsXKv8Kp7PArQnim0
+
+{
+  "title": "My Birthday Party",
+  "description": "Celebrating my birthday with friends and family",
+  "venue": "PASTE_VENUE_ID_HERE",
+  "eventType": "party",
+  "startDate": "2026-03-15T18:00:00Z",
+  "endDate": "2026-03-15T23:00:00Z",
+  "expectedAttendees": 50,
+  "ticketPrice": 0,
+  "isPublic": false
+}
+
+###
+
+### 13. Create Booking (Requires Token and Venue ID)
+POST http://localhost:5000/api/bookings
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OThlYzFiMzdhYzM3MTEyNTlmMmU1NGYiLCJpYXQiOjE3NzA5NjQyODUsImV4cCI6MTc3MTU2OTA4NX0.7BxHj-8B0c7vBI42t0Svz7Ev-XrsXKv8Kp7PArQnim0
+
+{
+  "venue": "PASTE_VENUE_ID_HERE",
+  "startDate": "2026-04-20T14:00:00Z",
+  "endDate": "2026-04-20T18:00:00Z",
+  "guests": 30,
+  "specialRequests": "Please arrange vegetarian catering options"
+}
+
+###
+
+### 14. Get My Bookings
+GET http://localhost:5000/api/bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OThlYzFiMzdhYzM3MTEyNTlmMmU1NGYiLCJpYXQiOjE3NzA5NjQyODUsImV4cCI6MTc3MTU2OTA4NX0.7BxHj-8B0c7vBI42t0Svz7Ev-XrsXKv8Kp7PArQnim0
