@@ -120,3 +120,19 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
+// Admin endpoint to seed database
+app.post('/api/admin/seed', async (req, res) => {
+  const { secret } = req.body;
+  
+  if (secret !== process.env.ADMIN_SECRET) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  
+  // Run seed script
+  const { execSync } = require('child_process');
+  execSync('npm run seed');
+  
+  res.json({ message: 'Database seeded successfully' });
+});
+
