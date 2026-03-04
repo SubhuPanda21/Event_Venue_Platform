@@ -12,7 +12,7 @@
 
 **A production-ready, scalable event booking platform supporting 1,000+ daily users**
 
-[🚀 Live Demo](#) • [📖 Documentation](#documentation) • [🐛 Report Bug](#) • [✨ Request Feature](#)
+[Live Demo](#livedemo) • [📖 Documentation](#documentation) • [🐛 Report Bug](#) • [✨ Request Feature](#)
 
 <img src="https://img.shields.io/github/stars/SubhuPanda21/Event_Venue_Platform?style=social" alt="GitHub stars">
 <img src="https://img.shields.io/github/forks/SubhuPanda21/Event_Venue_Platform?style=social" alt="GitHub forks">
@@ -21,6 +21,9 @@
 ---
 
 ### 📸 Platform Preview
+
+### Live Demo
+[https://eventvenueplatform.streamlit.app/]
 
 <p align="center">
   <img src="banner.png" alt="Event Platform Banner" width="800"/>
