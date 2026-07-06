@@ -15,7 +15,7 @@
 [Live Demo](#livedemo) • [📖 Documentation](#documentation) • [🐛 Report Bug](#) • [✨ Request Feature](#)
 
 <img src="https://img.shields.io/github/stars/SubhuPanda21/Event_Venue_Platform?style=social" alt="GitHub stars">
-<img src="https://img.shields.io/github/forks/SubhuPanda21/Event_Venue_Platform?style=social" alt="GitHub forks">
+<img  src="https://img.shields.io/github/forks/SubhuPanda21/Event_Venue_Platform?style=social" alt="GitHub forks">
 <img src="https://img.shields.io/github/watchers/SubhuPanda21/Event_Venue_Platform?style=social" alt="GitHub watchers">
 
 ---
